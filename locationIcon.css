@@ -1,0 +1,112 @@
+.locationIcon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    top: -8px;
+}
+
+@keyframes spin {
+    0% {
+        top: -16px;
+        left: -5px;
+        transform: rotate(-30deg);
+    }
+    10% {
+        top: -32px;
+        left: -26px;
+        transform: rotate(-60deg);
+    }
+    20% {
+        top: -40px;
+        left: -30px;
+        transform: rotate(-90deg);
+    }
+    30% {
+        top: -10px;
+        left: -47px;
+        transform: rotate(-120deg);
+    }
+    40% {
+        top: 13px;
+        left: -26px;
+        transform: rotate(-180deg);
+    }
+    50% {
+        top: 0px;
+        left: -4px;
+        transform: rotate(-210deg);
+    }
+    60% {
+        top: -17px;
+        left: 7px;
+        transform: rotate(-300deg);
+    }
+    70% {
+        top: -35px;
+        left: 5px;
+        transform: rotate(-330deg);
+    }
+    100% {
+        top: -8px;
+        left: 0;
+        transform: rotate(-360deg);
+    }
+}
+
+.locationIconHover {
+    animation-name: spin;
+    animation-duration: 0.3s;
+    animation-fill-mode: none;
+    animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    animation-delay: 0.15s;
+}
+
+.locationIcon::before {
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #111233;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.locationIcon::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 28px solid white;
+    top: 115%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+@keyframes wiggle {
+    25%{
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.locationIconWiggle {
+    animation-name: wiggle;
+    animation-duration: 0.5s;
+    animation-fill-mode: none;
+    animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    animation-delay: 0.45s;
+}
